@@ -52,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
     public void onClick (View view) {
 
         EditText editText = (EditText)findViewById(R.id.userText);
+        if (editText.getText().toString().isEmpty())    {
+            Toast.makeText(this, "Please Input A Number", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String userText = editText.getText().toString();
         double userDouble = Double.parseDouble(userText);
 
